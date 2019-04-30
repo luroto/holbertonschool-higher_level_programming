@@ -1,0 +1,1 @@
+Hi. This is the directory for the second Python project
