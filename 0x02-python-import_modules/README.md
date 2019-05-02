@@ -1,0 +1,1 @@
+Hi.This directory contains all the files for the second Python project
