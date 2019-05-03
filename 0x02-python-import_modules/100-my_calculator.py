@@ -4,7 +4,7 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     total = len(argv)
     if total != 4:
-        print("Usage: ./100-my_calculator <a> <operator> <b>")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     opera = argv[2]
     if opera != "+" and opera != "-" and opera != "*" and opera != "/":
