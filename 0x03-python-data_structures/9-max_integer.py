@@ -6,3 +6,5 @@ def max_integer(my_list=[]):
             if z > i:
                 i = z
         return(i)
+    else:
+        return(None)
