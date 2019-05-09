@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
     if matrix is None:
-        print()
+        return(None)
     else:
-        newmatrix = []
-        newmatrix = [[(row[i]**2)for i in range(len(matrix))] for row \
-                    in matrix]
+        newmatrix = [[(r[i]**2)for i in range(len(matrix))] for r in matrix]
     return(newmatrix)
