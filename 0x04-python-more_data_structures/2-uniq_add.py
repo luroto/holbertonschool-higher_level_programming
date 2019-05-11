@@ -2,7 +2,7 @@
 def uniq_add(my_list=[]):
     if not my_list:
         return(None)
-    if my_list is None:
+    if len(my_list) == 0:
         return(None)
     else:
         newlist = set(my_list)
