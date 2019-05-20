@@ -7,5 +7,3 @@ def safe_print_integer_err(value):
     except Exception as printing:
         print("Exception: {}".format(printing), file=sys.stderr)
         return(False)
-
-
