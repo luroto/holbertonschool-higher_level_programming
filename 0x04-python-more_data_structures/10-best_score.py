@@ -4,5 +4,5 @@ def best_score(a_dictionary):
         return(None)
     else:
         newdict = a_dictionary.items()
-        newdict = sorted(list(newdict))
-        return (newdict[0][0])
+        newdict = max(list(newdict))
+        return (newdict[0])
