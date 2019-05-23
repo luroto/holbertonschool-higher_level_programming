@@ -71,7 +71,7 @@ class Square:
 
     def __str__(self):
         if self.__size == 0:
-            print()
+            return ''
         else:
             lenght = self.position[0] + self.size
             spaces = self.position[0]
