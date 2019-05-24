@@ -1,0 +1,38 @@
+*********************************************
+Test file for the Say my name function
+*********************************************
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing cases:
+
+>>> say_my_name("Ratoncito", "Quesada")
+My name is Ratoncito Quesada
+
+>>> say_my_name(4563, "Queso")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+TypeError: both first_name and last_name must be strings
+
+>>> say_my_name('c', "gaturro")
+My name is c gaturro
+
+>>> say_my_name("Rodriguez", 45)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name({'gato' : 'gaturro'}, 68)
+Traceback (most recent call last):
+TypeError: both first_name and last_name must be strings
+
+>>> say_my_name("Holberton", "School")
+My name is Holberton School
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Please, somebody help me", "I'm trapped inside this machine")
+My name is Please, somebody help me I'm trapped inside this machine
