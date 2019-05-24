@@ -68,3 +68,21 @@ class Square:
                     else:
                         print("{}".format("#"), end="")
                 print()
+
+    def __str__(self):
+        if self.__size == 0:
+            return ''
+        else:
+            lenght = self.position[0] + self.size
+            spaces = self.position[0]
+            deep = self.position[1]
+            for i in range(deep):
+                print()
+            for x in range(self.size - 1):
+                for y in range(lenght):
+                    if y < spaces:
+                        print("{}".format(" "), end="")
+                    else:
+                        print("{}".format("#"), end="")
+                print()
+            return ' ' * self.position[0] + '#' * self.size

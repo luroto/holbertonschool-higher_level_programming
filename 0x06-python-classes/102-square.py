@@ -29,9 +29,20 @@ class Square:
         else:
             self.__size = value
 
-    def my_print(self):
-        if self.__size == 0:
-            print()
-        else:
-            for j in range(self.size):
-                print("{}".format('#')*self.size)
+    def __lt__(self,  other):
+        return self.area() < other.area()
+
+    def __le__(self, other):
+        return(self.area() <= other.area())
+
+    def __eq__(self, other):
+        return(self.area() == other.area())
+
+    def __ne__(self, other):
+        return(self.area() != other.area())
+
+    def __get__(self, other):
+        return(self.area() >= other.area())
+
+    def __gt__(self, other):
+        return(self.area() > other.area())
