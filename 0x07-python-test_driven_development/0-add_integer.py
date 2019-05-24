@@ -4,6 +4,8 @@ Function cheatsheet:
 add_integer(4, 5)
 9
 """
+
+
 def add_integer(a, b=98):
     """ This function works only with integer and float numbers, any other
     type of argument will be re rejected"""
