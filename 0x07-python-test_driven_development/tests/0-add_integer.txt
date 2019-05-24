@@ -8,7 +8,7 @@ will be tested.
 
 Testing cases: 
 
-add_integer(60, )
+>>> add_integer(60, )
 158
 
 >>> add_integer("ratoncitos", "queso")
