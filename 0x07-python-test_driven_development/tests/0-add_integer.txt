@@ -1,0 +1,58 @@
+**********************************
+The '''add_integer''' module test
+**********************************
+Through this file the code for the 0-add_integer.py
+will be tested.
+----------------------------------
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Testing cases: 
+
+add_integer(60, )
+158
+
+>>> add_integer("ratoncitos", "queso")
+Traceback (most recent call last):
+TypeError: a and b both must be integers.
+
+>>> add_integer(45, -545)
+-500
+
+>>> add_integer("", "")
+Traceback (most recent call last):
+TypeError: a and b both must be integers.
+
+>>> add_integer("564t6", 45)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(34556, "6452jh3")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None, 45)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(7834, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer([234, 45, 67], 4573)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(("perros", "gatos", "queso"), 456)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>> add_integer(1345.6, 865)
+2210
+
+>>> add_integer(23.8765, 98765)
+98788
+
+>>> add_integer(5678.345, "perro")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
