@@ -1,0 +1,43 @@
+*********************************************
+Test file for the third task, fourth file
+*********************************************
+This text file provides example cases for testing
+the third task, fourth file "Print a square"
+
+---------------------------------------------
+>>> print_square = __import__('4-print_square').print_square
+
+>>> print_square("")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(-34)
+Traceback (most recent call last):
+TypeError: size must be >= 0
+
+>>> print_square(0)
+
+>>> print_square(5.65)
+#####
+#####
+#####
+#####
+#####
+
+>>> print_square(-3.54)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square("veinte")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
