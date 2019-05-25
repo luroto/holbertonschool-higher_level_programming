@@ -1,0 +1,32 @@
+*********************************************
+Test file for the 4th task, 5th file
+*********************************************
+This file provides cases for printing a newline instead of some puntuaction signs.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing cases:
+
+>>> text_indentation("Testing this new feature. What do you think? I considered this: fine")
+Testing this new feature.
+<BLANKLINE>
+What do you think?
+<BLANKLINE>
+I considered this:
+<BLANKLINE>
+fine
+
+>>> text_indentation("")
+
+
+>>> text_indentation((45, 43))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({'gato': 'huesito'})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
