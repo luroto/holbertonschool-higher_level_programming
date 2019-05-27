@@ -67,11 +67,16 @@ class Rectangle:
                 print()
 
     def __str__(self):
-        if self.__width == 0 or self.__height == 0:
-            return ""
+        repre = ""
+        alto = self.__height
+        ancho = self.__width
+        if alto == 0 or alto == 0:
+            return(repestr)
         else:
-            self.__height = self.__height - 1
-            ancho = self.__width
-            self.print()
-            self.__height += 1
-            return("{}".format("#")*ancho)
+            for i in range(alto):
+                for j in range(ancho):
+                    repre += '#'
+                if i < alto - 1:
+                    repre += '\n'
+                i += 1
+        return(repre)
