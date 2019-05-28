@@ -79,9 +79,9 @@ class Rectangle:
     def __repr__(self):
         alto = self.__height
         ancho = self.__width
-        classname = "Rectangle"
+        clnm = "Rectangle"
         parentop = "("
         parentclose = ")"
         commo = ","
-        repre = classname + parentop + str(ancho) + commo + str(alto) + parentclose
+        repre = clnm + parentop + str(ancho) + commo + str(alto) + parentclose
         return(repre)
