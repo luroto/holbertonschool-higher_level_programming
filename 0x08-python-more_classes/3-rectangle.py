@@ -59,8 +59,8 @@ class Rectangle:
         repre = ""
         alto = self.__height
         ancho = self.__width
-        if alto == 0 or alto == 0:
-            return(repre)
+        if ancho == 0 or alto == 0:
+            return("")
         else:
             for i in range(alto):
                 for j in range(ancho):
