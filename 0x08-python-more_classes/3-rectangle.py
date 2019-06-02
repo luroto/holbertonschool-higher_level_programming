@@ -6,19 +6,8 @@ class Rectangle:
     """This is the class Rectangle. This time it's necessary to define some
     attributes. At this moment we have widht, height, perimeter and area"""
     def __init__(self, width=0, height=0):
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        if width < 0:
-            raise ValueError("width must be >=0")
-        else:
-            self.__width = width
-
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-        if width < 0:
-            raise ValueError("height must be >=0")
-        else:
-            self.__height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -29,7 +18,7 @@ class Rectangle:
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width must be >=0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -42,7 +31,7 @@ class Rectangle:
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >=0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
 
@@ -70,13 +59,11 @@ class Rectangle:
         repre = ""
         alto = self.__height
         ancho = self.__width
-        if alto == 0 or alto == 0:
-            return(repestr)
+        if ancho == 0 or alto == 0:
+            return("")
         else:
             for i in range(alto):
                 for j in range(ancho):
                     repre += '#'
-                if i < alto - 1:
-                    repre += '\n'
-                i += 1
-        return(repre)
+                repre += '\n'
+        return(repre[:-1])

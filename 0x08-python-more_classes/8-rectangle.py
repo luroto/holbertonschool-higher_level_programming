@@ -9,19 +9,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        if width < 0:
-            raise ValueError("width must be >=0")
-        else:
-            self.__width = width
-
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-        if width < 0:
-            raise ValueError("height must be >=0")
-        else:
-            self.__height = height
+        self.__width = width
+        self.__height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -33,7 +22,7 @@ class Rectangle:
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width must be >=0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -46,7 +35,7 @@ class Rectangle:
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >=0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
 
@@ -75,14 +64,17 @@ class Rectangle:
 
     def __str__(self):
         """ Section which merely prints a copy of the instance/object?"""
+        repre = ""
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return (repre)
         else:
-            self.__height = self.__height - 1
+            alto = self.__height
             ancho = self.__width
-            self.print()
-            self.__height += 1
-            return("{}".format(self.print_symbol)*ancho)
+            for i in range(alto):
+                for j in range(ancho):
+                    repre += str(self.print_symbol)
+                repre += '\n'
+            return(repre[:-1])
 
     def __repr__(self):
         """section which returns the exact string to create a rectangle"""
@@ -91,7 +83,7 @@ class Rectangle:
         clnm = "Rectangle"
         parentop = "("
         parentclose = ")"
-        commo = ","
+        commo = ", "
         repre = clnm + parentop + str(ancho) + commo + str(alto) + parentclose
         return(repre)
 
@@ -99,3 +91,17 @@ class Rectangle:
         """ section which disposes routine for del cases"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """This function compares two rectangles"""
+        if isinstance(rect_1, Rectangle) is not True:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if isinstance(rect_2, Rectangle) is not True:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if Rectangle.area(rect_1) > Rectangle.area(rect_2):
+            return(rect_1)
+        if Rectangle.area(rect_2) > Rectangle.area(rect_1):
+            return(rect_2)
+        if Rectangle.area(rect_1) == Rectangle.area(rect_2):
+return(rect_1)
