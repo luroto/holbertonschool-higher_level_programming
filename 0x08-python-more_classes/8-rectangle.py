@@ -114,4 +114,4 @@ class Rectangle:
         if Rectangle.area(rect_2) > Rectangle.area(rect_1):
             return(rect_2)
         if Rectangle.area(rect_1) == Rectangle.area(rect_2):
-        return(rect_1)
+            return(rect_1)
