@@ -74,14 +74,17 @@ class Rectangle:
 
     def __str__(self):
         """ Section which merely prints a copy of the instance/object?"""
+        repre =""
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return (repre)
         else:
-            self.__height = self.__height - 1
+            alto = self.__height
             ancho = self.__width
-            self.print()
-            self.__height += 1
-            return("{}".format("#")*ancho)
+            for i in range(alto):
+                for j in range(ancho):
+                    repre += str(self.print_symbol)
+                repre += '\n'
+            return(repre[:-1])
 
     def __repr__(self):
         """section which returns the exact string to create a rectangle"""

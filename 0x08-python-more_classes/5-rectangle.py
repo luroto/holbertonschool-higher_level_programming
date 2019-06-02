@@ -9,14 +9,14 @@ class Rectangle:
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width < 0:
-            raise ValueError("width must be >=0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = width
 
         if type(height) != int:
             raise TypeError("height must be an integer")
-        if width < 0:
-            raise ValueError("height must be >=0")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         else:
             self.__height = height
 
@@ -42,7 +42,7 @@ class Rectangle:
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >=0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
 
@@ -74,11 +74,14 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
-            self.__height = self.__height - 1
+            alto = self.__height
             ancho = self.__width
-            self.print()
-            self.__height += 1
-            return("{}".format("#")*ancho)
+            for i in range(alto):
+                for j in range(ancho):
+                    repre += str(self.print_symbol)
+                repre += '\n'
+            return(repre[:-1])
+
 
     def __repr__(self):
         """section which returns the exact string to create a rectangle"""
