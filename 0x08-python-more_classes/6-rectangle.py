@@ -74,7 +74,7 @@ class Rectangle:
 
     def __str__(self):
         """ Section which merely prints a copy of the instance/object?"""
-        repre =""
+        repre = ""
         if self.__width == 0 or self.__height == 0:
             return (repre)
         else:
