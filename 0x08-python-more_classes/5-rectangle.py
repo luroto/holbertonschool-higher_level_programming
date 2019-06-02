@@ -82,7 +82,6 @@ class Rectangle:
                 repre += '\n'
             return(repre[:-1])
 
-
     def __repr__(self):
         """section which returns the exact string to create a rectangle"""
         alto = self.__height
