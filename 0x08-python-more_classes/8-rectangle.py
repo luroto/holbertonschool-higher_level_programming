@@ -9,9 +9,20 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
-        Rectangle.number_of_instances += 1
+        if type(width) != int:
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self.__width = width
+
+        if type(height) != int:
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        else:
+            self.__height = height
+            Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -104,4 +115,4 @@ class Rectangle:
         if Rectangle.area(rect_2) > Rectangle.area(rect_1):
             return(rect_2)
         if Rectangle.area(rect_1) == Rectangle.area(rect_2):
-return(rect_1)
+        return(rect_1)
