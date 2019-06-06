@@ -6,7 +6,7 @@ from a class"""
 class MyList(list):
 
     def __init__(self):
-        pass
+        list.__init__(self)
 
     def print_sorted(self):
         print(sorted(self))
