@@ -4,5 +4,5 @@ a string into a given file, no matter if file previously existed or not"""
 
 
 def write_file(filename="", text=""):
-    with open(filename, 'r+') as archivo:
+    with open(filename, 'w') as archivo:
         return(archivo.write(text))
