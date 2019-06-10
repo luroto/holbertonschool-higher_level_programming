@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-""" This is the rectangle module"""
 
 from .base import Base
 
@@ -87,11 +85,19 @@ class Rectangle(Base):
     def display(self):
         ancho = self.__width
         alto = self.__height
+        corre = self.__x
+        prof = self.__y
         i = 0
         j = 0
+        al = 0
+        for al in range(prof):
+            print()
         for i in range(alto):
-            for j in range(ancho):
-                print("{}".format('#'), end="")
+            for j in range(ancho + corre):
+                if j < corre:
+                    print("{}".format("  "), end="")
+                else:
+                    print("{}".format('#'), end="")
             print()
 
     def __str__(self):
