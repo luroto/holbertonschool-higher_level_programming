@@ -5,5 +5,6 @@ def square_matrix_simple(matrix=[]):
     if not matrix:
         return(None)
     else:
-        newmatrix = [[(r[i]**2)for i in range(len(matrix))] for r in matrix]
+        for i in range(matrix):
+            for j in i:
     return(newmatrix)
