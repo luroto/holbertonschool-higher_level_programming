@@ -1,4 +1,5 @@
-
+#!/usr/bin/python3
+"""This module creates a rectangle"""
 from .base import Base
 
 
@@ -113,3 +114,18 @@ class Rectangle(Base):
         retos = (rec + parent + sid + pars + " " + equis + div + ygriega +
                  " " + "-" + " " + ancho + div + alto)
         return(retos)
+
+    def update(self, *args):
+        i = 0
+        for i in range(len(args)):
+            if i == 0:
+                self.id = args[i]
+            if i == 1:
+                self.__width = args[i]
+            if i == 2:
+                self.__height = args[i]
+            if i == 3:
+                self.__x = args[i]
+            if i == 4:
+                self.__y = args[i]
+            i += 1
