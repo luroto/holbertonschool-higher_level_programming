@@ -83,3 +83,13 @@ class Rectangle(Base):
         ancho = self.__width
         alto = self.__height
         return(ancho * alto)
+
+    def display(self):
+        ancho = self.__width
+        alto = self.__height
+        i = 0
+        j = 0
+        for i in range(alto):
+            for j in range(ancho):
+                print("{}".format('#'), end="")
+            print()
