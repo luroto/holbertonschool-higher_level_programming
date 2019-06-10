@@ -93,3 +93,17 @@ class Rectangle(Base):
             for j in range(ancho):
                 print("{}".format('#'), end="")
             print()
+
+    def __str__(self):
+        rec = "[Rectangle] "
+        sid = str(self.id)
+        equis = str(self.__x)
+        div = "/"
+        parent = "("
+        pars = ")"
+        ygriega = str(self.__y)
+        ancho = str(self.__width)
+        alto = str(self.__height)
+        retos = (rec + parent + sid + pars + " " + equis + div + ygriega +
+                 " " + "-" + " " + ancho + div + alto)
+        return(retos)
