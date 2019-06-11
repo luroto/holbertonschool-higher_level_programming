@@ -116,4 +116,5 @@ class Rectangle(Base):
                             setattr(self, lista[i], value)
 
     def to_dictionary(self):
+        """ Returns the dictionary representation of rectangle"""
         return(vars)
