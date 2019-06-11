@@ -32,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ Width getter """
         return(self.__width)
 
     @width.setter
     def width(self, value):
+        """ width setter"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -44,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ height getter"""
         return(self.__height)
 
     @height.setter
     def height(self, value):
+        """ height setter"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -56,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ x getter""" 
         return(self.__x)
 
     @x.setter
     def x(self, value):
+        """ x setter"""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -68,10 +74,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ y getter"""
         return(self.__y)
 
     @y.setter
     def y(self, value):
+        """y setter """
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -79,11 +87,13 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ This function returns the area of the polygone"""
         ancho = self.__width
         alto = self.__height
         return(ancho * alto)
 
     def display(self):
+        """ This function prints the polygone"""
         ancho = self.__width
         alto = self.__height
         corre = self.__x
@@ -102,10 +112,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """ Returns a string representation of the polygone"""
             return("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                    self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """ Updates all the info """
         if args and args != "":
             i = 0
             for i in range(len(args)):
