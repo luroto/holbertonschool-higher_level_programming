@@ -7,22 +7,27 @@ class Square(Rectangle):
     """ This is the main definition of Square """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ Class constructor"""
         Rectangle.__init__(self, size, size, x, y, id)
 
     @property
     def size(self):
+        """ Size getter"""
         return(self.width)
 
     @size.setter
     def size(self, size):
+        """ Size setter"""
         self.width = size
         self.height = size
 
     def __str__(self):
+        """ This function returns a string representation of the polygone"""
         return("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
                self.id, self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
+        """ This function updates values in the instance attributes"""
         if args and args != "":
             i = 0
             for argu in range(len(args)):
