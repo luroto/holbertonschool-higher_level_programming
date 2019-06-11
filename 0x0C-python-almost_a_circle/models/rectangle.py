@@ -102,8 +102,8 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-               self.id, self.__x, self.__y, self.__width))
+            return("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                   self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         if args and args != "":

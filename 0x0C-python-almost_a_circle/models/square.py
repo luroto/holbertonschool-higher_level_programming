@@ -17,3 +17,32 @@ class Square(Rectangle):
     def size(self, size):
         self.width = size
         self.height = size
+
+    def __str__(self):
+        return("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
+               self.id, self.x, self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        if args and args != "":
+            i = 0
+            for argu in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.size = args[i]
+                if i == 2:
+                    self.x = args[i]
+                if i == 3:
+                    self.y = args[i]
+                i += 1
+        else:
+            i = 0
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
