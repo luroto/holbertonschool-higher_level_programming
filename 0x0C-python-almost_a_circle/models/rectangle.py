@@ -88,16 +88,16 @@ class Rectangle(Base):
 
     def area(self):
         """ This function returns the area of the polygone"""
-        ancho = self.__width
-        alto = self.__height
+        ancho = self.width
+        alto = self.height
         return(ancho * alto)
 
     def display(self):
         """ This function prints the polygone"""
-        ancho = self.__width
-        alto = self.__height
-        corre = self.__x
-        prof = self.__y
+        ancho = self.width
+        alto = self.height
+        corre = self.x
+        prof = self.y
         i = 0
         j = 0
         al = 0
@@ -114,35 +114,21 @@ class Rectangle(Base):
     def __str__(self):
         """ Returns a string representation of the polygone"""
         return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
-                self.id, self.__x, self.__y, self.__width, self.__height))
+                self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
         """ Updates all the info """
+        lista = ["id", "width", "height", "x", "y"]
         if args and args != "":
             i = 0
             for i in range(len(args)):
-                if i == 0:
-                    self.id = args[i]
-                if i == 1:
-                    self.__width = args[i]
-                if i == 2:
-                    self.__height = args[i]
-                if i == 3:
-                    self.__x = args[i]
-                if i == 4:
-                    self.__y = args[i]
-                i += 1
+                if i < 5:
+                    setattr(self, lista[i], args[i])
         else:
             if kwargs and kwargs != "":
+                lista = ["id", "width", "height", "x", "y"]
                 i = 0
                 for key, value in kwargs.items():
-                    if key == "height":
-                        self.__height = value
-                    if key == "width":
-                        self.__width = value
-                    if key == "id":
-                        self.id = value
-                    if key == "x":
-                        self.__x = value
-                    if key == "y":
-                        self.__y = value
+                    for i in range(len(lista)):
+                        if key == lista[i]:
+                            setattr(self, lista[i], value)
