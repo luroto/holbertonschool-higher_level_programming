@@ -60,7 +60,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ x getter""" 
+        """ x getter"""
         return(self.__x)
 
     @x.setter
@@ -113,8 +113,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Returns a string representation of the polygone"""
-            return("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
-                   self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """ Updates all the info """
