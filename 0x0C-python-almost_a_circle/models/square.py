@@ -29,25 +29,17 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """ This function updates values in the instance attributes"""
         if args and args != "":
-            i = 0
-            for argu in range(len(args)):
-                if i == 0:
-                    self.id = args[i]
-                if i == 1:
-                    self.size = args[i]
-                if i == 2:
-                    self.x = args[i]
-                if i == 3:
-                    self.y = args[i]
-                i += 1
+            lista = ["id", "size", "x", "y"]
+            for i in range(len(args)):
+                if i < 5:
+                    setattr(self, lista[i], args[i])
         else:
-            i = 0
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                if key == "size":
-                    self.size = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
+            if kwargs and kwargs != "":
+                lista = ["id", "size", "x", "y"]
+                for key, value in kwargs.items():
+                    for i in range(len(lista)):
+                        if key == lista[i]:
+                            setattr(self, lista[i], value)
+
+    def to_dictionary(self):
+        """This function returns a dictionary representation of """
