@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ This is the base module for this project Almost a circle"""
+import json
 
 
 class Base:
@@ -13,3 +14,8 @@ class Base:
         else:
             type(self).__nb_objects += 1
             self.id = self.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ This function returns the JSON string rep of an object"""
+        return(json.dumps(list_dictionaries))
