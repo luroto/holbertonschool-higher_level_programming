@@ -89,7 +89,7 @@ class Rectangle(Base):
         for i in range(alto):
             for j in range(ancho + corre):
                 if j < corre:
-                    print("{}".format("  "), end="")
+                    print("{}".format(" "), end="")
                 else:
                     print("{}".format('#'), end="")
             print()
