@@ -102,18 +102,8 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        rec = "[Rectangle] "
-        sid = str(self.id)
-        equis = str(self.__x)
-        div = "/"
-        parent = "("
-        pars = ")"
-        ygriega = str(self.__y)
-        ancho = str(self.__width)
-        alto = str(self.__height)
-        retos = (rec + parent + sid + pars + " " + equis + div + ygriega +
-                 " " + "-" + " " + ancho + div + alto)
-        return(retos)
+        return("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
+               self.id, self.__x, self.__y, self.__width))
 
     def update(self, *args, **kwargs):
         if args and args != "":
