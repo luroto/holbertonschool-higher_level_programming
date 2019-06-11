@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module creates a rectangle"""
-from .base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -117,4 +117,4 @@ class Rectangle(Base):
                             setattr(self, lista[i], value)
 
     def to_dictionary(self):
-        return(vars(self))
+        return(vars)
