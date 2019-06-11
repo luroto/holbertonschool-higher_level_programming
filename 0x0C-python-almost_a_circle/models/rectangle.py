@@ -115,17 +115,32 @@ class Rectangle(Base):
                  " " + "-" + " " + ancho + div + alto)
         return(retos)
 
-    def update(self, *args):
-        i = 0
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[i]
-            if i == 1:
-                self.__width = args[i]
-            if i == 2:
-                self.__height = args[i]
-            if i == 3:
-                self.__x = args[i]
-            if i == 4:
-                self.__y = args[i]
-            i += 1
+    def update(self, *args, **kwargs):
+        if args and args != "":
+            i = 0
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.__width = args[i]
+                if i == 2:
+                    self.__height = args[i]
+                if i == 3:
+                    self.__x = args[i]
+                if i == 4:
+                    self.__y = args[i]
+                i += 1
+        else:
+            if kwargs and kwargs != "":
+                i = 0
+                for key, value in kwargs.items():
+                    if key == "height":
+                        self.__height = value
+                    if key == "width":
+                        self.__width = value
+                    if key == "id":
+                        self.id = value
+                    if key == "x":
+                        self.__x = value
+                    if key == "y":
+                        self.__y = value
