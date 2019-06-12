@@ -33,3 +33,10 @@ class Base:
         with open(nombre, 'w') as archi:
             guarda = cls.to_json_string(nuevo)
             archi.write(guarda)
+
+    @staticmethod
+    def from_json_string(json_string):
+        nuevo = []
+        if json_string:
+            nuevo = json.loads(json_string)
+        return nuevo
