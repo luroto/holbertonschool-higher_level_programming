@@ -12,12 +12,19 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            type(self).__nb_objects += 1
-            self.id = self.__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
         """ This function returns the JSON rep of an object"""
-        if not list_dictionaries or list_dictionaries is None:
+        if list_dictionaries is None or not list_dictionaries:
             return "[]"
         return(json.dumps(list_dictionaries))
+
+    def save_to_file(cls, list_objs):
+        if not type(cls).json:
+            return []
+        with open(type(cls).json, 'a') as archi:
+            for argu in list_objects:
+                to_json_string
