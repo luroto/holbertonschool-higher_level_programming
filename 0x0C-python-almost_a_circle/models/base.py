@@ -22,10 +22,16 @@ class Base:
             return "[]"
         return(json.dumps(list_dictionaries))
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """This function saves a json string to a file """
-        if not type(cls).json:
-            return []
-        with open(type(cls).json, 'a') as archi:
-            for argu in list_objects:
-                to_json_string
+        nombre = cls.__name__ + ".json"
+        nuevo = []
+        with open(nombre, 'w') as archi:
+            if list_objs is None:
+                archi.write(nuevo)
+            else:
+                for argu in list_objs:
+                    nuevo.append(argu.to_dictionary())
+                    guarda = cls.to_json_string(nuevo)
+                    archi.write(guarda)
