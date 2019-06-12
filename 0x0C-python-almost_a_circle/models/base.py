@@ -40,3 +40,14 @@ class Base:
         if json_string:
             nuevo = json.loads(json_string)
         return nuevo
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This method creates an instance"""
+        nombrecito = cls.__name__
+        if nombrecito == "Square":
+            muneco = cls(10)
+        if nombrecito == "Rectangle":
+            muneco = cls(10, 42)
+        muneco.update(**dictionary)
+        return muneco
