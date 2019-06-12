@@ -17,7 +17,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ This function returns the JSON string rep of an object"""
+        """ This function returns the JSON rep of an object"""
         if not list_dictionaries or list_dictionaries is None:
             return "[]"
         return(json.dumps(list_dictionaries))
