@@ -27,12 +27,9 @@ class Base:
         """This function saves a json string to a file """
         nombre = cls.__name__ + ".json"
         nuevo = []
-        if list_objs is None or not list_objs:
-            with open(nombre, 'w') as archi:
-                archi.write(nuevo)
-        else:
+        if list_objs:
             for argu in list_objs:
                 nuevo.append(argu.to_dictionary())
-            with open(nombre, 'w') as archi:
-                guarda = cls.to_json_string(nuevo)
-                archi.write(guarda)
+        with open(nombre, 'w') as archi:
+            guarda = cls.to_json_string(nuevo)
+            archi.write(guarda)
