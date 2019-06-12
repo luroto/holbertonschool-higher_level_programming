@@ -65,5 +65,3 @@ class Base:
             return hambre
         except:
             return listica
-
-
