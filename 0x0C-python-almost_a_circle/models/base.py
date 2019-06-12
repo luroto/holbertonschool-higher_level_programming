@@ -51,3 +51,19 @@ class Base:
             muneco = cls(10, 42)
         muneco.update(**dictionary)
         return muneco
+
+    @classmethod
+    def load_from_file(cls):
+        """ Load info from file"""
+        nombrecito = cls.__name__ + ".json"
+        listica = []
+        try:
+            with open(nombrecito, 'r') as archivo:
+                cuy = cls.json.load(archivo)
+                sabor = cls.from_json_string(cuy)
+                hambre = cls.create(sabor)
+            return hambre
+        except:
+            return listica
+
+
