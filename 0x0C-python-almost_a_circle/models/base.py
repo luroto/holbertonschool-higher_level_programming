@@ -23,6 +23,7 @@ class Base:
         return(json.dumps(list_dictionaries))
 
     def save_to_file(cls, list_objs):
+        """This function saves a json string to a file """
         if not type(cls).json:
             return []
         with open(type(cls).json, 'a') as archi:
