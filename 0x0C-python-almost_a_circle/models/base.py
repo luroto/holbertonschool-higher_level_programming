@@ -65,3 +65,19 @@ class Base:
             return hambre
         except:
             return listica
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saving to csv """
+        nombre = cls.__name__ + ".csv"
+        with open(nombre, 'w') as tome:
+            for j in list_objs:
+                cont = json.dumps(j)
+            nombre.write(cont)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loading file"""
+        nombre = cls.__name__ + ".csv"
+        with open(name, 'r') as leido:
+            return json.loads(nombre.read())
