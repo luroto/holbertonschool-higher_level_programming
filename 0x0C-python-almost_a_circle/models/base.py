@@ -30,6 +30,7 @@ class Base:
         with open(nombre, 'w') as archi:
             if list_objs is None:
                 archi.write(nuevo)
+                archi.close()
             else:
                 for argu in list_objs:
                     nuevo.append(argu.to_dictionary())
