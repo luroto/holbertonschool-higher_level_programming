@@ -1,6 +1,4 @@
--- This script lists all the genres that are not linked with any shows
-SELECT tv_genres.name AS genre, COUNT(tv_show_genres.genre_id) AS number_of_shows
-FROM tv_genres LEFT JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id 
-WHERE tv_show_genres.show_id IS NULL
-GROUP BY genre
-ORDER BY number_of_shows DESC;
+-- This script lists all the shows and all the genres linked to them
+SELECT tv_shows.title, tv_genres.name FROM tv_shows LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+LEFT JOIN tv_genres ON tv_genres.id = tv_show_genres.genre_id
+ORDER BY tv_shows.title ASC, tv_genres.name ASC;
