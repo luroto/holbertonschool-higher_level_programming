@@ -1,6 +1,7 @@
--- This script lists all the genres that are not linked with any shows
-SELECT tv_genres.name AS genre, COUNT(tv_show_genres.genre_id) AS number_of_shows
-FROM tv_genres LEFT JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id 
-WHERE tv_show_genres.show_id IS NULL
-GROUP BY genre
-ORDER BY number_of_shows DESC;
+-- This script lists all the genres not linked with the show Dexter
+SELECT tv_genres.name AS name FROM tv_genres
+WHERE tv_genres.name NOT IN (
+SELECT tv_genres.name FROM tv_genres INNER JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id 
+INNER JOIN tv_shows ON tv_show_genres.show_id = tv_shows.id
+WHERE tv_shows.title = "Dexter")
+ORDER BY tv_genres.name ASC;
