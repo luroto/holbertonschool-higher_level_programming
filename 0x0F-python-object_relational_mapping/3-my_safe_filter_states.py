@@ -16,9 +16,9 @@ if __name__ == '__main__':
     cura = db.cursor()
     cura.execute("""SELECT *
                  FROM states
-                 WHERE states.name LIKE BINARY "{}"
+                 WHERE states.name LIKE BINARY %s
                  ORDER BY states.id ASC
-                 """.format(inpu))
+                 """, [inpu])
     catchi = cura.fetchall()
     if catchi:
         for it in catchi:
