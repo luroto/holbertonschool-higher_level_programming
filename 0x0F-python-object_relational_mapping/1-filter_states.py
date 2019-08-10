@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This module connects a database and prints a database"""
+""" This module lists all states whose name starts with uppercase N"""
 import sys
 import MySQLdb
 if __name__ == '__main__':
@@ -11,7 +11,11 @@ if __name__ == '__main__':
             port=3306,
         )
     cura = db.cursor()
-    cura.execute("SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id ASC")
+    cura.execute("""SELECT *
+                 FROM states
+                 WHERE states.name LIKE 'N%'
+                 ORDER BY states.id ASC
+                 """)
     catchi = cura.fetchall()
     if catchi:
         for it in catchi:
