@@ -11,7 +11,7 @@ if __name__ == '__main__':
             port=3306,
         )
     cura = db.cursor()
-    cura.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cura.execute("SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id ASC")
     catchi = cura.fetchall()
     if catchi:
         for it in catchi:
