@@ -16,3 +16,5 @@ if __name__ == '__main__':
     if catchi:
         for it in catchi:
             print("{}".format(it))
+    cura.close()
+    db.close()
