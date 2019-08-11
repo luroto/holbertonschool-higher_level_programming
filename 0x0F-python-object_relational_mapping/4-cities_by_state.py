@@ -19,6 +19,6 @@ if __name__ == '__main__':
     catchi = consulta.fetchall()
     if catchi:
         for element in catchi:
-            print({}.format(catchi))
+            print("{}".format(element))
     consulta.close()
     databba.close()
