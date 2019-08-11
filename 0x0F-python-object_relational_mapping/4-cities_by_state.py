@@ -7,7 +7,7 @@ if __name__ == '__main__':
     databba = MySQLdb.connect(
                 host='localhost',
                 user=str(sys.argv[1]),
-                password=str(sys.argv[1]),
+                password=str(sys.argv[2]),
                 db=str(sys.argv[3]),
                 port=3306,
                 )
