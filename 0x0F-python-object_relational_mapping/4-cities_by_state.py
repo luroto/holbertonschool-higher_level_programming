@@ -12,7 +12,7 @@ if __name__ == '__main__':
                 port=3306,
                 )
     consulta = databba.cursor()
-    consulta.exec("""SELECT cities.id, cities.name, states.name
+    consulta.execute("""SELECT cities.id, cities.name, states.name
                     FROM cities, states
                     WHERE cities.state_id = states.id
                     ORDER BY cities.id ASC""")
