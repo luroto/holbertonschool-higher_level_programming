@@ -13,8 +13,8 @@ if __name__ == '__main__':
                 )
     consulta = databba.cursor()
     consulta.execute("""SELECT cities.id, cities.name, states.name
-                    FROM cities, states
-                    WHERE cities.state_id = states.id
+                    FROM cities LEFT JOIN states
+                    ON cities.state_id = states.id
                     ORDER BY cities.id ASC""")
     catchi = consulta.fetchall()
     if catchi:
