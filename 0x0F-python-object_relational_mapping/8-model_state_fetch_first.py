@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This script lists the first object from some database"""
+""" This script lists all State objects from some database"""
 import sys
 from model_state import State, Base
 from sqlalchemy import create_engine
@@ -12,7 +12,6 @@ if __name__ == '__main__':
     engine.connect()
     Session = sessionmaker(bind=engine)
     session = Session()
-    for instance in session.query(State).filter_by(id=1).order_by(
-                State.id.asc()):
-        print("{}: {}".format(instance.id, instance.name))
+    instance = session.query(State).first()
+    print("{}: {}".format(instance.id, instance.name))
     session.close()
