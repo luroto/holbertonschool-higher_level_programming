@@ -15,4 +15,6 @@ if __name__ == '__main__':
     instance = session.query(State).first()
     if instance is not False:
         print("{}: {}".format(instance.id, instance.name))
+    else:
+        print("Nothing")
     session.close()
