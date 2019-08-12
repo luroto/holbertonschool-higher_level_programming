@@ -14,11 +14,12 @@ if __name__ == '__main__':
     engine.connect()
     Session = sessionmaker(bind=engine)
     session = Session()
-    inpu = sys.argv[4]
-    number = list()
-    number = session.query(State).filter(State.name == '%1',[inpu]).one_or_none()
-    if len(number) != 0:
-       print("{}".format(number))
+    argu = dict()
+    argu['usar'] = sys.argv[4]
+    number = session.query(State).filter(State.name == '{}'.format(
+             argu['usar'])).first()
+    if number is not None:
+        print("{}".format(number.id))
     else:
         print("Not found")
     session.close()
