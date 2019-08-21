@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script sends json files
-curl -s -H "Content-Type: application/json" -X POST -d @"$2" "$1"
+curl -s -X POST -H "Content-Type: application/json" -d @"$2" "$1"
