@@ -7,6 +7,4 @@ import urllib.request
 linkcito = sys.argv[1]
 req = urllib.request.Request(linkcito)
 with urllib.request.urlopen(req) as response:
-    fetching = response.read()
-dicto = dict(response.getheaders())
-print(dicto['X-Request-Id'])
+    print(response.headers.get('X-Request-Id'))
