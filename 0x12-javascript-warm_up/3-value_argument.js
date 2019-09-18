@@ -5,9 +5,9 @@
     counter = index;
   });
   if (counter > 1) {
-    console.log(process.argv[2])
+    console.log(process.argv[2]);
   }
-  if (counter == 1) {
+  if (counter === 1) {
     console.log('No argument');
   }
 }
