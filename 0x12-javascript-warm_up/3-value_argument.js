@@ -1,6 +1,6 @@
 #!/usr/bin/node
 {
-  let counter;
+  let counter = 0;
   process.argv.forEach((val, index) => {
     counter = index;
   });
