@@ -3,7 +3,7 @@
  * is_palindrome - Determines if a linked list is a palindrome
  * @head: Pointer to the entire linked list
  * Return: 1 if it is a palindrome, otherwise 0
- */
+0;276;0c */
 int is_palindrome(listint_t **head)
 {
 	dlistint_t *h, *auxd;
@@ -54,7 +54,7 @@ dlistint_t *add_node_in_dlist(dlistint_t **head, int n)
 		return (*head);
 	}
 	aux = *head;
-	while (aux != NULL)
+	while (aux->next != NULL)
 		aux = aux->next;
 	aux->next = newnode;
 	newnode->prev = aux;
