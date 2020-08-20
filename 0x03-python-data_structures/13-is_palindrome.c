@@ -1,13 +1,13 @@
 #include "lists.h"
+#include <stdio.h>
 /**
  * is_palindrome - Determines if a linked list is a palindrome
  * @head: Pointer to the entire linked list
  * Return: 1 if it is a palindrome, otherwise 0
-0;276;0c */
+ */
 int is_palindrome(listint_t **head)
 {
-	dlistint_t *h, *auxd;
-	listint_t *aux;
+	listint_t *h, *auxd, *aux;
 
 	if (*head == NULL)
 		return (1);
@@ -20,13 +20,11 @@ int is_palindrome(listint_t **head)
 	}
 	aux = *head;
 	auxd = h;
-	while (auxd != NULL)
-		auxd = auxd->next;
 	while (auxd != NULL && aux != NULL)
 	{
 		if (auxd->n != aux->n)
 			return (0);
-		auxd = auxd->prev;
+		auxd = auxd->next;
 		aux = aux->next;
 	}
 	free_dlist(h);
@@ -38,26 +36,18 @@ int is_palindrome(listint_t **head)
  * @n: Value to be inserted in the new node
  * Return: Newnode, otherwise NULL
  */
-dlistint_t *add_node_in_dlist(dlistint_t **head, int n)
+listint_t *add_node_in_dlist(listint_t **head, int n)
 {
-	dlistint_t *newnode, *aux;
+	listint_t *newnode;
 
-	newnode = malloc(sizeof(dlistint_t));
+	newnode = malloc(sizeof(listint_t));
 	if (newnode == NULL)
 		return (NULL);
 	newnode->n = n;
-	newnode->next = NULL;
-	if (*head == NULL)
-	{
-		newnode->prev = NULL;
-		*head = newnode;
-		return (*head);
-	}
-	aux = *head;
-	while (aux->next != NULL)
-		aux = aux->next;
-	aux->next = newnode;
-	newnode->prev = aux;
+	newnode->next = *head;
+	if (*head != NULL)
+		(*head)->next = newnode;
+	*head = newnode;
 	return (newnode);
 }
 /**
@@ -65,9 +55,9 @@ dlistint_t *add_node_in_dlist(dlistint_t **head, int n)
  * @h: Pointer to the first node
  * Return: It's a void function
  */
-void free_dlist(dlistint_t *h)
+void free_dlist(listint_t *h)
 {
-	dlistint_t *aux;
+	listint_t *aux;
 
 	while (h != NULL)
 	{
